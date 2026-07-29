@@ -8,6 +8,7 @@ import PrefsForm from "./PrefsForm";
 import Dashboard from "./Dashboard";
 import SwipeDeck from "./SwipeDeck";
 import ResultPanel from "./ResultPanel";
+import CrewPanel from "./CrewPanel";
 
 export default function LunchClient({
   initialState,
@@ -19,6 +20,7 @@ export default function LunchClient({
   const router = useRouter();
   const [state, setState] = useState<LunchState>(initialState);
   const [busy, setBusy] = useState(false);
+  const [tab, setTab] = useState<"match" | "crew">("match");
 
   const refresh = useCallback(async () => {
     try {
@@ -102,7 +104,41 @@ export default function LunchClient({
         </div>
       </header>
 
-      <div className="px-4">
+      {/* ── Tabs: the match flow vs what the crew has chosen ── */}
+      <div className="mb-4 flex justify-center gap-2 px-4">
+        <button
+          onClick={() => setTab("match")}
+          className={`pill px-5 py-1.5 text-sm transition ${
+            tab === "match"
+              ? "bg-tinder text-white shadow"
+              : "border border-stone-300 bg-white text-[var(--body)]"
+          }`}
+        >
+          🔥 Match
+        </button>
+        <button
+          onClick={() => setTab("crew")}
+          className={`pill px-5 py-1.5 text-sm transition ${
+            tab === "crew"
+              ? "bg-tinder text-white shadow"
+              : "border border-stone-300 bg-white text-[var(--body)]"
+          }`}
+        >
+          👥 Crew (
+          {status === "collecting"
+            ? `${state.prefs.length}/${state.members.length} in`
+            : `${state.votes.length}/${state.members.length} voted`}
+          )
+        </button>
+      </div>
+
+      {tab === "crew" && (
+        <div className="px-4">
+          <CrewPanel state={state} />
+        </div>
+      )}
+
+      <div className={tab === "match" ? "px-4" : "hidden"}>
         {!session && (
           <div className="rounded-xl bg-white p-8 text-center shadow-sm">
             <p className="text-5xl">🔥</p>
