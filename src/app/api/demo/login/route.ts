@@ -4,6 +4,7 @@ import { DEMO_MODE } from "@/lib/demo/flag";
 import { DEMO_COOKIE } from "@/lib/demo/auth";
 import { DEMO_PASSWORD, findDemoUser } from "@/lib/demo/users";
 import { clientKey, rateLimit } from "@/lib/auth/rate-limit";
+import { hasClientMode } from "@/lib/modes";
 
 const GENERIC = "Unknown username or wrong password.";
 
@@ -44,9 +45,10 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: GENERIC }, { status: 401 });
   }
 
+  // Accounts with the prospect deck get asked which mode to continue with.
   const response = NextResponse.json({
     ok: true,
-    next: "/lunch",
+    next: hasClientMode(user.username) ? "/mode" : "/lunch",
     user: { display_name: user.display_name, username: user.username },
   });
   response.cookies.set(DEMO_COOKIE, user.id, {

@@ -4,6 +4,7 @@ import { useCallback, useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
 import type { LunchState } from "@/lib/queries/state";
+import { hasClientMode } from "@/lib/modes";
 import PrefsForm from "./PrefsForm";
 import Dashboard from "./Dashboard";
 import SwipeDeck from "./SwipeDeck";
@@ -85,6 +86,15 @@ export default function LunchClient({
           </p>
         </div>
         <div className="flex items-center gap-1.5">
+          {hasClientMode(profile.username) && (
+            <a
+              href="/mode"
+              title="Switch mode"
+              className="flex h-9 w-9 items-center justify-center rounded-full bg-stone-100 text-lg text-stone-500"
+            >
+              ⇄
+            </a>
+          )}
           {!demo && profile.role === "admin" && (
             <a
               href="/admin/users"

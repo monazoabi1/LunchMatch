@@ -27,6 +27,14 @@ export interface DessertSpot {
   walkMinutes: number; imageUrl?: string;
 }
 
+/** A prospect in the "potential clients" mode (see src/lib/clients.ts). */
+export interface ClientCompany {
+  id: string; name: string; sector: string;
+  source: 'provided' | 'ctech-2026';
+  rank?: number;      // CTech 2026 published rank, when source is ctech-2026
+  logoUrl?: string;   // UI falls back to the company initial if it fails to load
+}
+
 export type UserRole = 'user' | 'admin';
 export type AccountStatus = 'active' | 'disabled';
 
