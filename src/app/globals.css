@@ -1,0 +1,109 @@
+@import "tailwindcss";
+
+/* ── Tinder design tokens ─────────────────────────────────────────────
+   Brand gradient: Ultra Pink #FD297B → Fiery Rose #FF5864 → #FF655B
+   Action colors: nope #FF4458 · like (green) #2DE39B · rewind gold #F5B748
+   Chrome: white surfaces, #505965 body gray, #F0F2F4 background        */
+:root {
+  --tinder-pink: #fd297b;
+  --tinder-rose: #ff5864;
+  --tinder-orange: #ff655b;
+  --nope: #ff4458;
+  --like: #2de39b;
+  --gold: #f5b748;
+  --sky: #1ec6f7;
+  --ink: #21262e;
+  --body: #505965;
+  --chrome: #f0f2f4;
+}
+
+body {
+  background: var(--chrome);
+  color: var(--ink);
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
+    sans-serif;
+}
+
+.bg-tinder {
+  background-image: linear-gradient(
+    45deg,
+    var(--tinder-pink),
+    var(--tinder-rose),
+    var(--tinder-orange)
+  );
+}
+
+.text-tinder {
+  background-image: linear-gradient(
+    45deg,
+    var(--tinder-pink),
+    var(--tinder-orange)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Tinder-style pill CTA */
+.pill {
+  border-radius: 9999px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+/* Circular action button (the row under the card deck) */
+.action-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  background: #fff;
+  box-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.12),
+    0 0 1px rgba(0, 0, 0, 0.08);
+  transition:
+    transform 0.12s ease,
+    box-shadow 0.12s ease;
+  user-select: none;
+}
+.action-btn:active {
+  transform: scale(0.88);
+}
+
+/* Swipe stamps */
+.stamp {
+  position: absolute;
+  top: 24px;
+  padding: 2px 12px;
+  border: 4px solid;
+  border-radius: 8px;
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  pointer-events: none;
+}
+.stamp-like {
+  left: 20px;
+  color: var(--like);
+  border-color: var(--like);
+  transform: rotate(-18deg);
+}
+.stamp-nope {
+  right: 20px;
+  color: var(--nope);
+  border-color: var(--nope);
+  transform: rotate(18deg);
+}
+
+/* "It's a Match!" script headline */
+.match-script {
+  font-family: "Segoe Script", "Brush Script MT", "Snell Roundhand", cursive;
+  font-style: italic;
+}
+
+/* Range inputs in brand pink */
+input[type="range"] {
+  accent-color: var(--tinder-pink);
+}

@@ -1,0 +1,18 @@
+[
+  {
+    "id": "rebar",
+    "name": "ReBar",
+    "emoji": "🥤",
+    "description": "Smoothies, shakes and yogurt cups — the healthy-ish option.",
+    "walkMinutes": 5,
+    "imageUrl": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%2Fid%2FOIP.5HPjt3i0E9CYoLFeXSmUnAHaHa%3Fr%3D0%26pid%3DApi&f=1&ipt=8dad90d235f6918b054862365866db0e3cc28bccf50fccc2a8c7c7e011d69b41&ipo=images"
+  },
+  {
+    "id": "mcd-icecream",
+    "name": "McDonald's Ice Cream",
+    "emoji": "🍦",
+    "description": "Soft-serve cone — the people's dessert.",
+    "walkMinutes": 7,
+    "imageUrl": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%2Fid%2FOIP.nWyQyH9mkLUWGsa-qAkgfwHaGk%3Fr%3D0%26pid%3DApi&f=1&ipt=4a26f190d376724a6b7e24992f77381d64447de48ac743fd0a9ce643654ab74f&ipo=images"
+  }
+]
