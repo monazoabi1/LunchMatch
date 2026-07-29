@@ -1,0 +1,260 @@
+[
+  {
+    "id": "weebit-nano",
+    "name": "Weebit Nano",
+    "sector": "ReRAM non-volatile memory",
+    "source": "provided",
+    "logoUrl": "https://tse3.mm.bing.net/th/id/OIP.iXhPg4SAm_z-wYyVBHjOXwHaBY?r=0&pid=Api"
+  },
+  {
+    "id": "chain-reaction",
+    "name": "Chain Reaction",
+    "sector": "Fabless chips — privacy & blockchain acceleration",
+    "source": "provided",
+    "logoUrl": "https://tse2.mm.bing.net/th/id/OIP.EdQW2DmuryZAbeDgKxwn-QHaFS?r=0&pid=Api"
+  },
+  {
+    "id": "nextsilicon",
+    "name": "NextSilicon",
+    "sector": "High-performance compute accelerators",
+    "source": "provided",
+    "logoUrl": "https://tse4.mm.bing.net/th/id/OIP.WcfjZwKgx5ZSbJB16Z2VigHaGu?r=0&pid=Api"
+  },
+  {
+    "id": "xsight-labs",
+    "name": "Xsight Labs",
+    "sector": "Data centre networking silicon",
+    "source": "provided",
+    "logoUrl": "https://tse1.mm.bing.net/th/id/OIP.0jrzHw2SUjxxqEmrQaZu5gHaD6?r=0&pid=Api"
+  },
+  {
+    "id": "proteantecs",
+    "name": "proteanTecs",
+    "sector": "Deep-data chip health monitoring",
+    "source": "provided",
+    "logoUrl": "https://tse2.mm.bing.net/th/id/OIP.jCNDSpz7UBMur1jhR1muqQHaD4?r=0&pid=Api"
+  },
+  {
+    "id": "quantum-machines",
+    "name": "Quantum Machines",
+    "sector": "Quantum control hardware",
+    "source": "provided",
+    "logoUrl": "https://tse2.mm.bing.net/th/id/OIP.cJtP1aYLvGZPF9gw301MGAHaD7?r=0&pid=Api"
+  },
+  {
+    "id": "autotalks",
+    "name": "Autotalks",
+    "sector": "V2X automotive chipsets",
+    "source": "provided",
+    "logoUrl": "https://tse3.mm.bing.net/th/id/OIP.4xkBv62FdXNXZzCCMQ-UXgHaDG?r=0&pid=Api"
+  },
+  {
+    "id": "andes",
+    "name": "Andes Technology",
+    "sector": "RISC-V processor IP",
+    "source": "provided",
+    "logoUrl": "https://tse2.mm.bing.net/th/id/OIP.LcoQvxExU1BiDFbD97xxZQHaEK?r=0&pid=Api"
+  },
+  {
+    "id": "real-intent",
+    "name": "Real Intent",
+    "sector": "EDA — static verification",
+    "source": "provided",
+    "logoUrl": "https://tse4.mm.bing.net/th/id/OIP.fN6Yvpryzi_m37muf1yUxAHaHY?r=0&pid=Api"
+  },
+  {
+    "id": "cadence",
+    "name": "Cadence",
+    "sector": "EDA & design software",
+    "source": "provided",
+    "logoUrl": "https://tse1.mm.bing.net/th/id/OIP.48xlStNNJ9pBemyWzWtgawHaHa?r=0&pid=Api"
+  },
+  {
+    "id": "adasky",
+    "name": "ADASKY",
+    "sector": "Thermal sensing for automotive",
+    "source": "provided",
+    "logoUrl": "https://tse1.mm.bing.net/th/id/OIP.LIEUwfmuZgz2JhZVPRWW2gHaCH?r=0&pid=Api"
+  },
+  {
+    "id": "raaam",
+    "name": "RAAAM Memory Technologies",
+    "sector": "Embedded memory IP",
+    "source": "provided",
+    "logoUrl": "https://tse2.mm.bing.net/th/id/OIP.4w2H23lZOKJKjEow6lrj8gAAAA?r=0&pid=Api"
+  },
+  {
+    "id": "hailo",
+    "name": "Hailo",
+    "sector": "Edge AI processors",
+    "source": "provided",
+    "logoUrl": "https://tse1.mm.bing.net/th/id/OIP.lRfvLZtbU_7IGMdCwVHDmAAAAA?r=0&pid=Api"
+  },
+  {
+    "id": "trieye",
+    "name": "TriEye",
+    "sector": "SWIR sensing",
+    "source": "provided",
+    "logoUrl": "https://tse1.mm.bing.net/th/id/OIP.w04FJynw46v_cfhLAYgSsQHaFF?r=0&pid=Api"
+  },
+  {
+    "id": "irregular",
+    "name": "Irregular",
+    "sector": "AI",
+    "source": "ctech-2026",
+    "rank": 1,
+    "logoUrl": "https://tse2.mm.bing.net/th/id/OIP.Zntq2WzjZz5qbjyGz93iuAHaD5?r=0&pid=Api"
+  },
+  {
+    "id": "unframe",
+    "name": "Unframe",
+    "sector": "Enterprise software for the transition to AI",
+    "source": "ctech-2026",
+    "rank": 2,
+    "logoUrl": "https://tse2.mm.bing.net/th/id/OIP.nrJxBYI7uDX2FE9UCQZvygHaBi?r=0&pid=Api"
+  },
+  {
+    "id": "air",
+    "name": "AIR",
+    "sector": "Aviation",
+    "source": "ctech-2026",
+    "rank": 3,
+    "logoUrl": "https://tse4.mm.bing.net/th/id/OIP.lAAQ70jjHp8arpS2yDtUwAHaDt?r=0&pid=Api"
+  },
+  {
+    "id": "zyg",
+    "name": "ZyG",
+    "sector": "AI for e-commerce",
+    "source": "ctech-2026",
+    "rank": 4,
+    "logoUrl": "https://tse3.mm.bing.net/th/id/OIP.LUD1DbPIV03a5DEfLfaReQHaE2?r=0&pid=Api"
+  },
+  {
+    "id": "appcharge",
+    "name": "Appcharge",
+    "sector": "D2C infrastructure for game developers",
+    "source": "ctech-2026",
+    "rank": 5,
+    "logoUrl": "https://tse2.mm.bing.net/th/id/OIP.9f93DXDx68FdYigYvby1kAAAAA?pid=Api"
+  },
+  {
+    "id": "port",
+    "name": "Port",
+    "sector": "Development platform",
+    "source": "ctech-2026",
+    "rank": 6,
+    "logoUrl": "https://tse1.mm.bing.net/th/id/OIP.vdSAYl-uLHym5B7J21O-3AHaHa?r=0&pid=Api"
+  },
+  {
+    "id": "qodo",
+    "name": "Qodo",
+    "sector": "Code testing using AI",
+    "source": "ctech-2026",
+    "rank": 7,
+    "logoUrl": "https://tse1.mm.bing.net/th/id/OIP.gK4L6t9OfuHJeRhLUczWzQHaB-?r=0&pid=Api"
+  },
+  {
+    "id": "scaleops",
+    "name": "ScaleOps",
+    "sector": "Autonomous cloud & AI resource management",
+    "source": "ctech-2026",
+    "rank": 8,
+    "logoUrl": "https://tse2.mm.bing.net/th/id/OIP.CQNtG5x4va-vFjEkrMB29QHaDW?r=0&pid=Api"
+  },
+  {
+    "id": "guardio",
+    "name": "Guardio",
+    "sector": "Cybersecurity for end users",
+    "source": "ctech-2026",
+    "rank": 9,
+    "logoUrl": "https://tse4.mm.bing.net/th/id/OIP.DTLPo_Z9n3Dr2oJ2sVJZTgAAAA?r=0&pid=Api"
+  },
+  {
+    "id": "quantum-art",
+    "name": "Quantum Art",
+    "sector": "Quantum computing",
+    "source": "ctech-2026",
+    "rank": 10,
+    "logoUrl": "https://tse1.mm.bing.net/th/id/OIP.tYPyCOfl2sgXP-LeQRdDKgHaF0?r=0&pid=Api"
+  },
+  {
+    "id": "qedma",
+    "name": "Qedma",
+    "sector": "Quantum computing",
+    "source": "ctech-2026",
+    "rank": 11,
+    "logoUrl": "https://tse4.mm.bing.net/th/id/OIP.NHmdpEyxgjN7O1oCrBWmkgAAAA?r=0&pid=Api"
+  },
+  {
+    "id": "q-factor",
+    "name": "Q Factor",
+    "sector": "Quantum computing",
+    "source": "ctech-2026",
+    "rank": 12,
+    "logoUrl": "https://tse4.mm.bing.net/th/id/OIP.z37j3IEWk-hncYXi8gZIkQAAAA?r=0&pid=Api"
+  },
+  {
+    "id": "factify",
+    "name": "Factify",
+    "sector": "Development & document management infrastructure",
+    "source": "ctech-2026",
+    "rank": 13,
+    "logoUrl": "https://tse2.mm.bing.net/th/id/OIP.74jwfo3X8WzouZSTTi0w_gHaES?r=0&pid=Api"
+  },
+  {
+    "id": "majestic-labs",
+    "name": "Majestic Labs",
+    "sector": "Chips",
+    "source": "ctech-2026",
+    "rank": 14,
+    "logoUrl": "https://tse1.mm.bing.net/th/id/OIP.-KccyGlEAYVwlz1gr9-dwwHaHa?r=0&pid=Api"
+  },
+  {
+    "id": "groundcover",
+    "name": "Groundcover",
+    "sector": "Monitoring",
+    "source": "ctech-2026",
+    "rank": 15,
+    "logoUrl": "https://tse4.mm.bing.net/th/id/OIP.FvWfC4Hlvl6zFrsCt3uM7AHaBI?r=0&pid=Api"
+  },
+  {
+    "id": "brandlight",
+    "name": "Brandlight",
+    "sector": "Visibility in LLM engines",
+    "source": "ctech-2026",
+    "rank": 16,
+    "logoUrl": "https://tse3.mm.bing.net/th/id/OIP.w3kSwgjGuATUx-IqnKzKSAHaD4?r=0&pid=Api"
+  },
+  {
+    "id": "vega",
+    "name": "Vega",
+    "sector": "Cyber",
+    "source": "ctech-2026",
+    "rank": 17,
+    "logoUrl": "https://tse1.mm.bing.net/th/id/OIP.TD6iAyl0isDOP2Bg8lBSPQHaEK?r=0&pid=Api"
+  },
+  {
+    "id": "noma-security",
+    "name": "Noma Security",
+    "sector": "Cyber",
+    "source": "ctech-2026",
+    "rank": 18,
+    "logoUrl": "https://tse1.mm.bing.net/th/id/OIP.rL8vxJ0iPg8pM7d-EoCmvgHaBC?r=0&pid=Api"
+  },
+  {
+    "id": "vetric",
+    "name": "Vetric",
+    "sector": "Cyber intelligence",
+    "source": "ctech-2026",
+    "rank": 19,
+    "logoUrl": "https://tse2.mm.bing.net/th/id/OIP.I2TSaAGQS2EoENzKvPhIZgHaB1?r=0&pid=Api"
+  },
+  {
+    "id": "novee",
+    "name": "Novee",
+    "sector": "Cyber AI",
+    "source": "ctech-2026",
+    "rank": 20,
+    "logoUrl": "https://tse1.mm.bing.net/th/id/OIP.EXn8HskVFgYOKcmbmWJojAHaGQ?r=0&pid=Api"
+  }
+]

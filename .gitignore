@@ -1,0 +1,26 @@
+# dependencies
+node_modules/
+
+# next.js
+.next/
+out/
+
+# env
+.env
+.env*.local
+
+# credential handouts and personnel rosters — never commit these
+GSOC_USERS.md
+roster*.txt
+
+# vercel
+.vercel
+
+# supabase cli local state (config.toml IS committed; these are per-machine)
+supabase/.temp/
+supabase/.branches/
+
+# misc
+*.tsbuildinfo
+next-env.d.ts
+coverage/
