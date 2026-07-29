@@ -3,9 +3,10 @@
   "configurations": [
     {
       "name": "lunchmatch-demo",
-      "runtimeExecutable": "C:\\Users\\BasharI\\AppData\\Local\\node\\npm.cmd",
-      "runtimeArgs": ["run", "dev"],
-      "port": 3000
+      "runtimeExecutable": "C:\\Claude\\LunchMatch\\dev.cmd",
+      "runtimeArgs": [],
+      "port": 3000,
+      "autoPort": true
     }
   ]
 }
