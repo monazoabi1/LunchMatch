@@ -54,17 +54,17 @@ begin
 
   insert into recommendations(session_id, restaurant_id, restaurant_name, rank, score, score_breakdown, ai_why, ai_slogan, ai_source)
   values
-    (s2, 'el-fuego', 'El Fuego Taqueria', 1, 11,
-     '[{"rule":"dietary_ok","points":3,"label":"Works for everyone''s dietary needs"},{"rule":"category_match","points":3,"label":"The group asked for Mexican"},{"rule":"in_budget","points":2,"label":"Fits the group budget"},{"rule":"transport_ok","points":2,"label":"Walkable for the whole crew"},{"rule":"open_now","points":1,"label":"Open during your window"}]',
-     'Three people typed "tacos" independently and then spent ten minutes pretending other options existed. The salsa bar settles all remaining debates.',
-     'Democracy, but spicier.', 'fallback'),
-    (s2, 'seoul-food', 'Seoul Food', 2, 9,
+    (s2, 'falafel-mishel', 'Falafel Mishel', 1, 11,
+     '[{"rule":"dietary_ok","points":3,"label":"Works for everyone''s dietary needs"},{"rule":"category_match","points":3,"label":"Matches what the group is craving"},{"rule":"in_budget","points":2,"label":"Fits the group budget"},{"rule":"transport_ok","points":2,"label":"Walkable for the whole crew"},{"rule":"open_now","points":1,"label":"Open during your window"}]',
+     'Three people typed "falafel" independently and then spent ten minutes pretending other options existed. The Turkish market settles all remaining debates.',
+     'Democracy, deep fried.', 'fallback'),
+    (s2, 'abu-shakker', 'Abu Shakker', 2, 9,
      '[{"rule":"dietary_ok","points":3,"label":"Works for everyone''s dietary needs"},{"rule":"in_budget","points":2,"label":"Fits the group budget"},{"rule":"transport_ok","points":2,"label":"Walkable for the whole crew"},{"rule":"walk_ok","points":2,"label":"Short walk"}]',
-     'For the contingent that says "anything works" and then vetoes everything: bibimbap is the diplomatic option nobody can argue with.',
-     'Kimchi is a compromise.', 'fallback'),
-    (s2, 'green-bowl', 'Green Bowl Kitchen', 3, 8,
+     'For the contingent that says "anything works" and then vetoes everything: hummus is the diplomatic option nobody can argue with.',
+     'Consensus, with extra pita.', 'fallback'),
+    (s2, 'breada', 'Breada', 3, 8,
      '[{"rule":"dietary_ok","points":3,"label":"Works for everyone''s dietary needs"},{"rule":"in_budget","points":2,"label":"Fits the group budget"},{"rule":"transport_ok","points":2,"label":"Walkable for the whole crew"},{"rule":"open_now","points":1,"label":"Open during your window"}]',
-     'The build-your-own format means the 12:15-vs-12:30 negotiation is the only decision left to fight about.',
+     'Build-your-own sandwiches mean the 12:15-vs-12:30 negotiation is the only decision left to fight about.',
      'Assemble your own consensus.', 'fallback');
 
   select id into r1 from recommendations where session_id = s2 and rank = 1;
