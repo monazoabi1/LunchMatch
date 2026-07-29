@@ -7,21 +7,24 @@ import type {
   Vote,
 } from "@/types";
 import type { LunchState } from "@/lib/queries/state";
+import {
+  DEMO_GROUP_ID,
+  DEMO_GROUP_NAME,
+  DEMO_INVITE_CODE,
+  DEMO_USERS,
+} from "./users";
 
 // In-memory demo store — survives dev hot-reloads via globalThis.
 // Mirrors exactly what the Supabase tables would hold.
+// The roster itself lives in ./users.ts — edit that to change the crew.
 
-export const DEMO_USERS: Profile[] = [
-  { id: "demo-alice", display_name: "Alice", avatar_emoji: "🌮", group_id: "demo-group" },
-  { id: "demo-bob", display_name: "Bob", avatar_emoji: "🥗", group_id: "demo-group" },
-  { id: "demo-charlie", display_name: "Charlie", avatar_emoji: "🍕", group_id: "demo-group" },
-];
+export { DEMO_USERS };
 
 const DEMO_GROUP: Group = {
-  id: "demo-group",
-  name: "Taco Tuesday Crew",
-  invite_code: "TACO42",
-  created_by: "demo-alice",
+  id: DEMO_GROUP_ID,
+  name: DEMO_GROUP_NAME,
+  invite_code: DEMO_INVITE_CODE,
+  created_by: DEMO_USERS[0]?.id ?? "demo-user",
   created_at: new Date().toISOString(),
 };
 
@@ -47,44 +50,53 @@ function freshSession(id: string): DailyLunchSession {
   };
 }
 
+// Pre-filled preferences so the dashboard isn't empty on first load. Applied
+// to whoever is 2nd and 3rd in the roster, so it survives any roster edit —
+// the person signing in (usually the 1st) still fills in their own.
+//
+// Deliberately carries NO dietary tags and NO allergies. The roster holds real
+// coworkers' names, and seeding a fabricated allergy or restriction against a
+// real person is the kind of placeholder someone reads as fact. Everyone
+// declares their own on the preferences form.
+const SEED_PREFS: Omit<LunchPreference, "id" | "session_id" | "user_id" | "updated_at">[] = [
+  {
+    attendance: "yes",
+    available_from: "12:15",
+    available_to: "13:00",
+    max_budget: 12,
+    categories: ["salad", "bowls", "mexican"],
+    dietary: [],
+    allergies: "",
+    transport: "walk",
+    max_walking_minutes: 8,
+    comment: "",
+  },
+  {
+    attendance: "maybe",
+    available_from: "12:00",
+    available_to: "14:00",
+    max_budget: 20,
+    categories: ["pizza", "mexican", "asian"],
+    dietary: [],
+    allergies: "",
+    transport: "walk",
+    max_walking_minutes: 15,
+    comment: "",
+  },
+];
+
 function seed(): DemoDb {
   const session = freshSession("demo-session-1");
+  const now = new Date().toISOString();
   return {
     sessions: [session],
-    prefs: [
-      {
-        id: "demo-pref-bob",
-        session_id: session.id,
-        user_id: "demo-bob",
-        attendance: "yes",
-        available_from: "12:15",
-        available_to: "13:00",
-        max_budget: 12,
-        categories: ["salad", "bowls", "mexican"],
-        dietary: ["vegetarian"],
-        allergies: "",
-        transport: "walk",
-        max_walking_minutes: 8,
-        comment: "Something green please",
-        updated_at: new Date().toISOString(),
-      },
-      {
-        id: "demo-pref-charlie",
-        session_id: session.id,
-        user_id: "demo-charlie",
-        attendance: "maybe",
-        available_from: "12:00",
-        available_to: "14:00",
-        max_budget: 20,
-        categories: ["pizza", "mexican", "asian"],
-        dietary: [],
-        allergies: "peanuts",
-        transport: "walk",
-        max_walking_minutes: 15,
-        comment: "Might have a call at 1",
-        updated_at: new Date().toISOString(),
-      },
-    ],
+    prefs: DEMO_USERS.slice(1, 1 + SEED_PREFS.length).map((user, i) => ({
+      ...SEED_PREFS[i],
+      id: `demo-pref-${user.id}`,
+      session_id: session.id,
+      user_id: user.id,
+      updated_at: now,
+    })),
     recommendations: [],
     votes: [],
     seq: 1,
