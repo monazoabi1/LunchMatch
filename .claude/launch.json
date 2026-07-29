@@ -2,8 +2,8 @@
   "version": "0.0.1",
   "configurations": [
     {
-      "name": "lunchmatch-demo",
-      "runtimeExecutable": "C:\\Claude\\LunchMatch\\dev.cmd",
+      "name": "lunchmatch",
+      "runtimeExecutable": "${workspaceFolder}\\dev.cmd",
       "runtimeArgs": [],
       "port": 3000,
       "autoPort": true

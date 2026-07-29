@@ -147,20 +147,19 @@ places with walk times measured from **WeWork, Derech Ha'atzmaut 45**:
   swipes and vote changes from three users → "End the Democracy" → match screen, squads, award →
   reset. Also driven via the API directly to verify status-guarded transitions.
 
-Not verified (needs a live Supabase project): the admin account-creation flow and the 12 auth
-test scenarios. The code is written; it just can't be exercised without credentials.
+Not verified at the time of writing (needed a live Supabase project): the admin
+account-creation flow and the 12 auth test scenarios. **Both were exercised in the follow-up
+session — see §9.**
 
 ---
 
 ## 7. Current state
 
-- Branch `LunchMatch`, 4 commits ahead of origin
-- App runs in **demo mode** (no `.env.local` yet)
-- To switch to real mode: create a Supabase project, run `supabase/schema.sql`, turn off email
-  confirmation, create `.env.local` with the three keys, then bootstrap the first admin:
-  ```sql
-  update profiles set role = 'admin', profile_completed = true where email = 'you@company.com';
-  ```
+- Branch `LunchMatch`
+- App runs in **real mode** against a local Supabase stack in Docker — see
+  [LOCAL_SETUP.md](LOCAL_SETUP.md) for how to start it and how to move to Supabase Cloud.
+- The admin account system and the auth scenarios listed as "not verified" below are now
+  **verified end to end** (§9).
 
 ---
 
@@ -179,3 +178,76 @@ test scenarios. The code is written; it just can't be exercised without credenti
   once, is a harmless no-op rather than two different top-3 lists.
 - **One vote per user enforced by the database** (`primary key (session_id, user_id)` + upsert)
   — no application logic can double-vote.
+
+---
+
+## 9. Follow-up session — real mode stood up and verified (2026-07-29)
+
+Goal: get out of demo mode. Chose a **local Supabase stack** (Supabase CLI + Docker) over a
+cloud project, because it needs no signup and proves the real-mode code paths today. The same
+`.env.local` swaps to Cloud by replacing three values.
+
+The working copy turned out to be a **different machine** from the first session (`C:\Claude\
+LunchMatch`, portable Node in `%LOCALAPPDATA%\node`): no Node, no `node_modules`, no
+`.env.local`, Docker installed but not running. So nothing was actually live at
+`localhost:58647`. Installed portable Node v24.18.0 and Supabase CLI 2.110.0, both into
+`%LOCALAPPDATA%` — no admin rights, no `PATH` mutation, removable by deleting the folder.
+
+### Three real bugs found, all in the auth/database layer
+
+| Bug | Where | Why it mattered |
+|-----|-------|-----------------|
+| **No Data API grants** — `schema.sql` had zero `GRANT` statements | `schema.sql` | Supabase no longer auto-exposes new `public` tables to `anon`/`authenticated`/`service_role`; the legacy behaviour is deprecated and gone 2026-10-30. Every PostgREST call fails, starting with the `from("profiles")` read on the login path — it presents as broken auth, not a misconfigured DB. **Would have broken a fresh Cloud project too.** |
+| **Privilege escalation** — any coworker could run `update profiles set role='admin'` on their own row | `schema.sql` | The `profiles_self` policy is `for all using (id = auth.uid())`. RLS restricts which **rows** you may update, never which **columns**, so a blanket table grant hands every user a route to full admin. Caught by an explicit test, not by reading. Fixed with a **column-scoped** `grant update (…) on profiles`, listing only the seven fields a user edits about themselves. |
+| **Self-signup was wide open** | `config.toml` | With the public anon key, `POST /auth/v1/signup` created a working account and the `handle_new_user` trigger gave it a profile — directly contradicting the schema's own "no self-signup" comment. Verified by actually creating an intruder account, then fixed with `[auth] enable_signup = false`. |
+
+Two traps worth remembering, both cost a debugging cycle:
+
+- `[auth.email] enable_signup = false` is **not** the signup switch. It maps to
+  `GOTRUE_EXTERNAL_EMAIL_ENABLED` and disables email **logins** too — it locked every account
+  out with `"Email logins are disabled"`. The correct knob is `enable_signup` under `[auth]`
+  (`GOTRUE_DISABLE_SIGNUP`). The generated config's comment on the former is misleading.
+- PowerShell 5.1's `Set-Content -Encoding utf8` writes a **BOM**, which makes the Supabase CLI
+  fail with `toml: invalid character at start of key: ï`. Write config files with
+  `UTF8Encoding($false)`.
+
+### Setup decisions
+
+- **`config.toml` points `[db.seed] sql_paths` at `./schema.sql`** rather than copying the
+  schema into `supabase/migrations/`, so there is exactly one source of truth and
+  `db.cmd db reset` rebuilds from the same file the Cloud SQL editor would run.
+- **`scripts/bootstrap-admin.ts`** replaces the manual "run an `UPDATE` in the SQL editor"
+  step. Idempotent, so it also serves as a lockout recovery hatch. It runs unbuilt under
+  Node 24's native type stripping and imports the app's real `generateTempPassword`, so the
+  CSPRNG password logic is not duplicated. (Needed `allowImportingTsExtensions` in tsconfig.)
+- `dev.cmd` hardcoded `C:\Claude\LunchMatch`; now uses `%~dp0`. `launch.json` uses
+  `${workspaceFolder}`. Added `db.cmd` as the matching launcher for the Supabase CLI.
+- `supabase init` has a Windows bug: it calls `makeDirectory` unconditionally and fails when
+  `supabase/` already exists, **even with `--force`**. Worked around by generating the config
+  in a temp directory and copying only `config.toml` across.
+- Admin's `profile_completed` is left **false** on bootstrap, so the admin walks the same
+  first-login profile setup as everyone else — they eat lunch too, and the scoring engine
+  needs their own dietary data, which only they should enter.
+
+### Verified against the live stack
+
+- **The 12 auth scenarios that were previously untestable**: login by username *and* email;
+  admin-created account → forced `/change-password` → `/profile/setup`; weak passwords
+  rejected; non-admin gets `403` from `/api/admin/users`; duplicate username rejected;
+  username enumeration impossible (unknown user and wrong password return byte-identical
+  errors); coworker cannot self-promote; self-signup refused; admin creation still works
+  *with* signup disabled.
+- **Both `SECURITY DEFINER` RPCs** on the browser path (anon key + user session):
+  `create_group`, `join_group_by_code`, invalid invite code correctly raising, and groupmate
+  visibility under RLS.
+- **Full lunch flow** in real mode: preferences from two users → `collecting → voting`
+  transition producing 3 ranked recommendations with `ai_source=fallback` → votes → a **vote
+  change** (upsert, one row per user) → close → `closed` with a winner recorded → double-close
+  is a harmless no-op.
+- `npx tsc --noEmit` clean, **31/31 unit tests**, `npm run build` succeeds (21 routes).
+  Note `next.config.ts` sets `typescript.ignoreBuildErrors`, so the build alone does **not**
+  catch type errors — `tsc` has to be run separately.
+
+> One test-harness artifact worth knowing: Git Bash on Windows mangles emoji in `curl -d`
+> payloads (🌮 arrived as 2 bytes). It was the harness, not the app — the same request via
+> `fetch` stored a correct 4-byte emoji. Don't debug the app for that.

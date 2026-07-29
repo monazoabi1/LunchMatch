@@ -72,7 +72,7 @@ create table recommendations (
   session_id uuid not null references daily_lunch_sessions(id) on delete cascade,
   restaurant_id text not null,
   restaurant_name text not null,
-  rank int not null check (rank between 1 and 3),
+  rank int not null check (rank >= 1),
   score int not null,
   score_breakdown jsonb not null default '[]',
   ai_why text, ai_slogan text, ai_source text check (ai_source in ('ai','fallback')),
@@ -216,6 +216,53 @@ begin
 end; $$;
 create trigger on_auth_user_created after insert on auth.users
   for each row execute function handle_new_user();
+
+-- ── Data API grants ────────────────────────────────────────────────────────
+-- Supabase no longer auto-exposes newly created `public` entities to the Data
+-- API roles; the legacy auto-expose behaviour is deprecated and disappears on
+-- 2026-10-30. Without these explicit grants, every PostgREST call fails with a
+-- permission error on a fresh project — including the `from("profiles")` read
+-- on the login path, which would make the app look like a broken login rather
+-- than a misconfigured database. The RLS policies above remain the actual
+-- access gate; these grants only open the door for RLS to then narrow.
+-- Deliberately last in the file so `all tables` / `all sequences` /
+-- `all functions` cover everything created above.
+grant usage on schema public to anon, authenticated, service_role;
+
+-- service_role bypasses RLS and performs every privileged mutation: account
+-- creation, disable/reactivate, promote/demote, password reset, delete.
+grant select, insert, update, delete on all tables in schema public to service_role;
+
+-- Signed-in users. Note there is no DELETE grant anywhere: nothing in the app
+-- deletes a row from a user session — removing an account goes through
+-- auth.admin.deleteUser() on the service role and cascades.
+grant select on all tables in schema public to authenticated;
+grant insert, update on daily_lunch_sessions, lunch_preferences, recommendations, votes
+  to authenticated;
+
+-- profiles.UPDATE must be COLUMN-SCOPED, and this is load-bearing for security.
+-- RLS can restrict which ROWS a user may update but never which COLUMNS, so a
+-- blanket `grant update on profiles` combined with the profiles_self policy
+-- (`for all using (id = auth.uid())`) lets any coworker run
+--     update profiles set role = 'admin' where id = <their own id>
+-- and take over the whole app. Confirmed by test before this grant existed.
+-- Every privileged field is written only by the service-role client in
+-- /api/admin/* and /api/account/change-password, so `authenticated` needs
+-- exactly the fields a user edits about themselves in /profile/setup:
+grant update (
+  display_name, avatar_emoji, avatar_url, allergies, dietary_restrictions,
+  profile_completed, updated_at
+) on profiles to authenticated;
+-- Deliberately withheld from `authenticated`: role, account_status,
+-- must_change_password, username, email, team, group_id, id, created_at.
+-- group_id is still writable by create_group() / join_group_by_code() because
+-- those are SECURITY DEFINER and run as the table owner, not as the caller.
+-- profiles has no INSERT grant either: rows are created by handle_new_user().
+
+grant usage, select on all sequences in schema public
+  to authenticated, service_role;
+grant execute on all functions in schema public
+  to authenticated, service_role;
 
 -- ── Bootstrapping the first administrator ──────────────────────────────────
 -- Create the first account via the Supabase dashboard (or signup), then run:

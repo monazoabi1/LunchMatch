@@ -61,7 +61,7 @@ export interface ScoreLine { rule: string; points: number; label: string; }
 
 export interface Recommendation {
   id: Uuid; session_id: Uuid; restaurant_id: string; restaurant_name: string;
-  rank: 1|2|3; score: number; score_breakdown: ScoreLine[];
+  rank: number; score: number; score_breakdown: ScoreLine[];
   ai_why: string | null; ai_slogan: string | null; ai_source: 'ai'|'fallback'|null;
 }
 

@@ -9,7 +9,8 @@ export interface ScoredRestaurant {
 }
 
 export interface ScoringResult {
-  top3: ScoredRestaurant[];
+  ranked: ScoredRestaurant[]; // the whole catalog, best first (dietary filter applied)
+  top3: ScoredRestaurant[]; // the podium — what the AI writes copy for
   dietaryFallback: boolean; // true = no restaurant satisfied every dietary need
 }
 
@@ -78,9 +79,13 @@ function transportLabel(mode: GroupScoringInput["groupTransport"]): string {
 
 /**
  * Score the whole catalog. Deterministic: sort by score desc, tie-break by
- * avgPrice asc then id asc. If the dietary hard filter eliminates EVERY
- * restaurant, fall back to the highest-scored regardless of the filter
- * (dietaryFallback=true → UI shows the "closest options" banner).
+ * avgPrice asc then id asc. Returns EVERY restaurant that clears the dietary
+ * hard filter, best first — the swipe deck shows the full ranked list, and
+ * `top3` is just the podium the AI writes copy for.
+ *
+ * If the dietary hard filter eliminates EVERY restaurant, fall back to the
+ * full scored list regardless of the filter (dietaryFallback=true → UI shows
+ * the "closest options" banner).
  */
 export function scoreAll(restaurants: Restaurant[], g: GroupScoringInput): ScoringResult {
   const scored = restaurants
@@ -93,8 +98,7 @@ export function scoreAll(restaurants: Restaurant[], g: GroupScoringInput): Scori
     );
 
   const eligible = scored.filter((s) => s.eligible);
-  if (eligible.length > 0) {
-    return { top3: eligible.slice(0, 3), dietaryFallback: false };
-  }
-  return { top3: scored.slice(0, 3), dietaryFallback: true };
+  const ranked = eligible.length > 0 ? eligible : scored;
+
+  return { ranked, top3: ranked.slice(0, 3), dietaryFallback: eligible.length === 0 };
 }

@@ -193,11 +193,14 @@ export default function SwipeDeck({
       </div>
       <p className="mt-2 text-center text-xs text-stone-400">
         Swipe right (or ♥) to vote · swiping another card changes your vote
+        {orderedRecs.length > 0 && ` · ${orderedRecs.length} of ${recs.length} left`}
       </p>
 
-      {/* ── Live tally ── */}
+      {/* ── Live tally — only places someone actually voted for ── */}
       <div className="mt-5 space-y-2">
-        {recs.map((rec) => {
+        {recs
+          .filter((rec) => votes.some((v) => v.recommendation_id === rec.id))
+          .map((rec) => {
           const restaurant = getRestaurant(rec.restaurant_id);
           const voters = votes.filter((v) => v.recommendation_id === rec.id);
           const isMine = myVote === rec.id;
@@ -228,6 +231,9 @@ export default function SwipeDeck({
             </div>
           );
         })}
+        {votes.length === 0 && (
+          <p className="text-center text-xs text-stone-400">No votes yet — start swiping.</p>
+        )}
       </div>
     </div>
   );
@@ -250,6 +256,9 @@ function Card({
 }) {
   const restaurant = getRestaurant(rec.restaurant_id);
   const gradient = CARD_GRADIENTS[hash(rec.restaurant_id) % CARD_GRADIENTS.length];
+  const [imgFailed, setImgFailed] = useState(false);
+  // Emoji is a *fallback* only — never drawn over a photo that loaded.
+  const showEmoji = !restaurant?.imageUrl || imgFailed;
 
   return (
     <div
@@ -259,17 +268,15 @@ function Card({
     >
       {!flipped ? (
         <div className="relative flex h-full flex-col" style={{ background: gradient }}>
-          {/* real photo when available; emoji shows through if it fails to load */}
-          {restaurant?.imageUrl && (
+          {/* real photo when available */}
+          {restaurant?.imageUrl && !imgFailed && (
             // eslint-disable-next-line @next/next/no-img-element
             <img
               src={restaurant.imageUrl}
               alt={restaurant.name}
               draggable={false}
               className="absolute inset-0 h-full w-full object-cover"
-              onError={(e) => {
-                (e.target as HTMLImageElement).style.display = "none";
-              }}
+              onError={() => setImgFailed(true)}
             />
           )}
 
@@ -281,9 +288,11 @@ function Card({
             Nope
           </div>
 
-          {/* emoji "photo" fallback layer */}
+          {/* emoji "photo" — only when there is no usable photo */}
           <div className="flex flex-1 items-center justify-center">
-            <span className="text-[120px] drop-shadow-lg">{restaurant?.emoji ?? "🍽️"}</span>
+            {showEmoji && (
+              <span className="text-[120px] drop-shadow-lg">{restaurant?.emoji ?? "🍽️"}</span>
+            )}
           </div>
 
           {/* bottom overlay — Tinder's clear-to-black gradient */}

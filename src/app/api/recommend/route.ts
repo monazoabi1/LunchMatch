@@ -4,6 +4,7 @@ import { RESTAURANTS } from "@/lib/restaurants";
 import { aggregatePreferences } from "@/lib/scoring/aggregate";
 import { scoreAll } from "@/lib/scoring/score";
 import { enrichRecommendations } from "@/lib/ai/enrich";
+import { buildFallbackEnrichment } from "@/lib/ai/fallback";
 import { DEMO_MODE } from "@/lib/demo/flag";
 import { getDemoUserId } from "@/lib/demo/auth";
 import {
@@ -16,7 +17,7 @@ import type { LunchPreference, ScoreLine } from "@/types";
 interface SnapshotRec {
   restaurant_id: string;
   restaurant_name: string;
-  rank: 1 | 2 | 3;
+  rank: number;
   score: number;
   score_breakdown: ScoreLine[];
   ai_why: string | null;
@@ -24,27 +25,37 @@ interface SnapshotRec {
   ai_source: "ai" | "fallback";
 }
 
-/** Deterministic scoring snapshot + exactly one AI call (invisible fallback). */
+/**
+ * Deterministic scoring snapshot for the WHOLE ranked catalog + exactly one AI
+ * call (invisible fallback). The AI writes copy for the top 3 only — keeping
+ * that call small and fast is what makes it safe to run on a live demo click.
+ * Everything below the podium gets the same deterministic copy the fallback
+ * path produces, so every card in the deck reads consistently.
+ */
 async function computeSnapshot(prefs: LunchPreference[]): Promise<SnapshotRec[]> {
   const group = aggregatePreferences(prefs);
-  const { top3 } = scoreAll(RESTAURANTS, group);
+  const { ranked } = scoreAll(RESTAURANTS, group);
 
-  const recInputs = top3.map((s, i) => ({
+  const recInputs = ranked.map((s, i) => ({
     restaurant_id: s.restaurant.id,
     restaurant_name: s.restaurant.name,
-    rank: (i + 1) as 1 | 2 | 3,
+    rank: i + 1,
     score: s.score,
     score_breakdown: s.breakdown,
   }));
 
-  const { enrichment, source } = await enrichRecommendations(recInputs, group);
-  const copyById = new Map(enrichment.restaurants.map((r) => [r.restaurant_id, r]));
+  const podium = recInputs.slice(0, 3);
+  const { enrichment, source } = await enrichRecommendations(podium, group);
+  const restCopy = buildFallbackEnrichment(recInputs.slice(3), group);
+  const copyById = new Map(
+    [...enrichment.restaurants, ...restCopy.restaurants].map((r) => [r.restaurant_id, r])
+  );
 
-  return recInputs.map((r) => ({
+  return recInputs.map((r, i) => ({
     ...r,
     ai_why: copyById.get(r.restaurant_id)?.why_it_fits ?? null,
     ai_slogan: copyById.get(r.restaurant_id)?.slogan ?? null,
-    ai_source: source,
+    ai_source: i < podium.length ? source : ("fallback" as const),
   }));
 }
 
