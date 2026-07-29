@@ -4,9 +4,15 @@
     "name": "Sakura Sushi Bar",
     "emoji": "🍣",
     "description": "Conveyor-belt sushi with a lunch bento deal.",
-    "categories": ["sushi", "asian"],
+    "categories": [
+      "sushi",
+      "asian"
+    ],
     "avgPrice": 18,
-    "dietary": ["gluten_free", "lactose_free"],
+    "dietary": [
+      "gluten_free",
+      "lactose_free"
+    ],
     "walkMinutes": 8,
     "supportsDelivery": true,
     "deliveryMinutes": 35,
@@ -19,9 +25,13 @@
     "name": "Luigi's Slice House",
     "emoji": "🍕",
     "description": "Wood-fired pizza by the slice, loud Italian playlist included.",
-    "categories": ["pizza"],
+    "categories": [
+      "pizza"
+    ],
     "avgPrice": 9,
-    "dietary": ["vegetarian"],
+    "dietary": [
+      "vegetarian"
+    ],
     "walkMinutes": 4,
     "supportsDelivery": true,
     "deliveryMinutes": 25,
@@ -34,9 +44,18 @@
     "name": "Green Bowl Kitchen",
     "emoji": "🥗",
     "description": "Build-your-own salads and grain bowls, everything labeled.",
-    "categories": ["salad", "bowls"],
+    "categories": [
+      "salad",
+      "bowls"
+    ],
     "avgPrice": 12,
-    "dietary": ["vegetarian", "vegan", "gluten_free", "lactose_free", "nut_free"],
+    "dietary": [
+      "vegetarian",
+      "vegan",
+      "gluten_free",
+      "lactose_free",
+      "nut_free"
+    ],
     "walkMinutes": 6,
     "supportsDelivery": true,
     "deliveryMinutes": 30,
@@ -49,7 +68,9 @@
     "name": "Smash Bros Burgers",
     "emoji": "🍔",
     "description": "Double-smashed patties, crinkle fries, milkshakes.",
-    "categories": ["burgers"],
+    "categories": [
+      "burgers"
+    ],
     "avgPrice": 14,
     "dietary": [],
     "walkMinutes": 12,
@@ -64,9 +85,14 @@
     "name": "El Fuego Taqueria",
     "emoji": "🌮",
     "description": "Street tacos, burritos, and a salsa bar with real heat.",
-    "categories": ["mexican"],
+    "categories": [
+      "mexican"
+    ],
     "avgPrice": 11,
-    "dietary": ["vegetarian", "gluten_free"],
+    "dietary": [
+      "vegetarian",
+      "gluten_free"
+    ],
     "walkMinutes": 9,
     "supportsDelivery": false,
     "deliveryMinutes": null,
@@ -79,9 +105,16 @@
     "name": "Shalom Grill",
     "emoji": "🥙",
     "description": "Kosher-certified shawarma, falafel, and laffa wraps.",
-    "categories": ["mediterranean"],
+    "categories": [
+      "mediterranean"
+    ],
     "avgPrice": 13,
-    "dietary": ["kosher", "halal", "vegetarian", "vegan"],
+    "dietary": [
+      "kosher",
+      "halal",
+      "vegetarian",
+      "vegan"
+    ],
     "walkMinutes": 14,
     "supportsDelivery": true,
     "deliveryMinutes": 45,
@@ -94,9 +127,16 @@
     "name": "Bombay Express",
     "emoji": "🍛",
     "description": "Thali lunch specials and fresh naan from the tandoor.",
-    "categories": ["indian"],
+    "categories": [
+      "indian"
+    ],
     "avgPrice": 12,
-    "dietary": ["vegetarian", "vegan", "halal", "gluten_free"],
+    "dietary": [
+      "vegetarian",
+      "vegan",
+      "halal",
+      "gluten_free"
+    ],
     "walkMinutes": 11,
     "supportsDelivery": true,
     "deliveryMinutes": 35,
@@ -109,9 +149,15 @@
     "name": "Seoul Food",
     "emoji": "🍜",
     "description": "Bibimbap, bulgogi bowls, and kimchi everything.",
-    "categories": ["asian", "bowls"],
+    "categories": [
+      "asian",
+      "bowls"
+    ],
     "avgPrice": 13,
-    "dietary": ["vegetarian", "gluten_free"],
+    "dietary": [
+      "vegetarian",
+      "gluten_free"
+    ],
     "walkMinutes": 7,
     "supportsDelivery": true,
     "deliveryMinutes": 30,
@@ -124,9 +170,13 @@
     "name": "Brisket Bros BBQ",
     "emoji": "🍖",
     "description": "Low-and-slow smoked meats by the pound. Bring napkins.",
-    "categories": ["bbq"],
+    "categories": [
+      "bbq"
+    ],
     "avgPrice": 19,
-    "dietary": ["gluten_free"],
+    "dietary": [
+      "gluten_free"
+    ],
     "walkMinutes": 18,
     "supportsDelivery": false,
     "deliveryMinutes": null,
@@ -139,9 +189,14 @@
     "name": "The Deli District",
     "emoji": "🥪",
     "description": "Stacked sandwiches, house-made pickles, fast line.",
-    "categories": ["sandwiches"],
+    "categories": [
+      "sandwiches"
+    ],
     "avgPrice": 10,
-    "dietary": ["vegetarian", "nut_free"],
+    "dietary": [
+      "vegetarian",
+      "nut_free"
+    ],
     "walkMinutes": 3,
     "supportsDelivery": true,
     "deliveryMinutes": 20,
@@ -154,9 +209,16 @@
     "name": "Soup Society",
     "emoji": "🍲",
     "description": "Six rotating soups daily with sourdough on the side.",
-    "categories": ["soup", "sandwiches"],
+    "categories": [
+      "soup",
+      "sandwiches"
+    ],
     "avgPrice": 8,
-    "dietary": ["vegetarian", "vegan", "lactose_free"],
+    "dietary": [
+      "vegetarian",
+      "vegan",
+      "lactose_free"
+    ],
     "walkMinutes": 5,
     "supportsDelivery": true,
     "deliveryMinutes": 25,
@@ -169,9 +231,17 @@
     "name": "Athena Mezze House",
     "emoji": "🫒",
     "description": "Mezze platters, gyros, and baklava for the table.",
-    "categories": ["mediterranean", "salad"],
+    "categories": [
+      "mediterranean",
+      "salad"
+    ],
     "avgPrice": 15,
-    "dietary": ["vegetarian", "vegan", "gluten_free", "halal"],
+    "dietary": [
+      "vegetarian",
+      "vegan",
+      "gluten_free",
+      "halal"
+    ],
     "walkMinutes": 10,
     "supportsDelivery": true,
     "deliveryMinutes": 40,
@@ -184,9 +254,14 @@
     "name": "Wok This Way",
     "emoji": "🥡",
     "description": "Flash-fried noodles and rice boxes, ready in six minutes.",
-    "categories": ["asian"],
+    "categories": [
+      "asian"
+    ],
     "avgPrice": 10,
-    "dietary": ["vegetarian", "vegan"],
+    "dietary": [
+      "vegetarian",
+      "vegan"
+    ],
     "walkMinutes": 6,
     "supportsDelivery": true,
     "deliveryMinutes": 25,
@@ -199,9 +274,16 @@
     "name": "Halal Corner Grill",
     "emoji": "🍗",
     "description": "Chicken-over-rice platters with the famous white sauce.",
-    "categories": ["mediterranean", "bowls"],
+    "categories": [
+      "mediterranean",
+      "bowls"
+    ],
     "avgPrice": 9,
-    "dietary": ["halal", "gluten_free", "nut_free"],
+    "dietary": [
+      "halal",
+      "gluten_free",
+      "nut_free"
+    ],
     "walkMinutes": 8,
     "supportsDelivery": true,
     "deliveryMinutes": 30,
@@ -214,9 +296,14 @@
     "name": "The Melt Lab",
     "emoji": "🧀",
     "description": "Gourmet grilled cheese and tomato soup pairings.",
-    "categories": ["sandwiches", "soup"],
+    "categories": [
+      "sandwiches",
+      "soup"
+    ],
     "avgPrice": 11,
-    "dietary": ["vegetarian"],
+    "dietary": [
+      "vegetarian"
+    ],
     "walkMinutes": 15,
     "supportsDelivery": true,
     "deliveryMinutes": 35,
@@ -229,9 +316,14 @@
     "name": "Wok and Roll",
     "emoji": "🥡",
     "description": "Flash-fired noodle boxes and Asian street food in the lower city.",
-    "categories": ["asian"],
+    "categories": [
+      "asian"
+    ],
     "avgPrice": 13,
-    "dietary": ["vegetarian", "vegan"],
+    "dietary": [
+      "vegetarian",
+      "vegan"
+    ],
     "walkMinutes": 6,
     "supportsDelivery": true,
     "deliveryMinutes": 25,
@@ -245,9 +337,14 @@
     "name": "Lululeesh",
     "emoji": "🍢",
     "description": "Chef Hmodi Okala's henna-party feast near Palmer Gate — charcoal skewers on silver trays, live music.",
-    "categories": ["mediterranean", "bbq"],
+    "categories": [
+      "mediterranean",
+      "bbq"
+    ],
     "avgPrice": 24,
-    "dietary": ["halal"],
+    "dietary": [
+      "halal"
+    ],
     "walkMinutes": 3,
     "supportsDelivery": false,
     "deliveryMinutes": null,
@@ -261,9 +358,13 @@
     "name": "Shipudei Abu Al Waleed",
     "emoji": "🥙",
     "description": "Skewers straight off the coals, stuffed into pita, laffa or baguette.",
-    "categories": ["mediterranean"],
+    "categories": [
+      "mediterranean"
+    ],
     "avgPrice": 14,
-    "dietary": ["halal"],
+    "dietary": [
+      "halal"
+    ],
     "walkMinutes": 9,
     "supportsDelivery": true,
     "deliveryMinutes": 30,
@@ -277,7 +378,9 @@
     "name": "Basel Burger",
     "emoji": "🍔",
     "description": "Double smash cheeseburgers and onion strings on HaMeginim Boulevard.",
-    "categories": ["burgers"],
+    "categories": [
+      "burgers"
+    ],
     "avgPrice": 15,
     "dietary": [],
     "walkMinutes": 6,
@@ -293,7 +396,10 @@
     "name": "Manhattan American Diner",
     "emoji": "🗽",
     "description": "American diner — smashing quality since 2018.",
-    "categories": ["burgers", "sandwiches"],
+    "categories": [
+      "burgers",
+      "sandwiches"
+    ],
     "avgPrice": 16,
     "dietary": [],
     "walkMinutes": 8,
@@ -309,7 +415,9 @@
     "name": "Maayan Habira",
     "emoji": "🍺",
     "description": "Haifa's legendary 1962 beer hall — kostica ribs, chopped liver, cold pints.",
-    "categories": ["bbq"],
+    "categories": [
+      "bbq"
+    ],
     "avgPrice": 28,
     "dietary": [],
     "walkMinutes": 4,
@@ -325,9 +433,16 @@
     "name": "Poke Poke",
     "emoji": "🐟",
     "description": "Hawaiian poke bowls with house shoyu and spicy mayo.",
-    "categories": ["bowls", "sushi"],
+    "categories": [
+      "bowls",
+      "sushi"
+    ],
     "avgPrice": 16,
-    "dietary": ["gluten_free", "lactose_free", "nut_free"],
+    "dietary": [
+      "gluten_free",
+      "lactose_free",
+      "nut_free"
+    ],
     "walkMinutes": 13,
     "supportsDelivery": true,
     "deliveryMinutes": 40,
@@ -340,517 +455,699 @@
     "name": "Falafel Mishel",
     "emoji": "🧆",
     "description": "Turkish-market falafel legend — crispy balls, no ceremony.",
-    "categories": ["mediterranean", "sandwiches"],
+    "categories": [
+      "mediterranean",
+      "sandwiches"
+    ],
     "avgPrice": 7,
-    "dietary": ["vegetarian", "vegan"],
+    "dietary": [
+      "vegetarian",
+      "vegan"
+    ],
     "walkMinutes": 3,
     "supportsDelivery": false,
     "deliveryMinutes": null,
     "opensAt": "09:00",
-    "closesAt": "16:00"
+    "closesAt": "16:00",
+    "imageUrl": "https://tse2.mm.bing.net/th/id/OIP.N_UEDFFxj5LvhDCDwJuTRQHaJj?r=0&pid=Api"
   },
   {
     "id": "bourekas-bachar",
     "name": "Bourekas Bachar HaAgala",
     "emoji": "🥐",
     "description": "50+ years of fresh bourekas right on Ha'atzmaut.",
-    "categories": ["sandwiches"],
+    "categories": [
+      "sandwiches"
+    ],
     "avgPrice": 6,
-    "dietary": ["vegetarian"],
+    "dietary": [
+      "vegetarian"
+    ],
     "walkMinutes": 2,
     "supportsDelivery": false,
     "deliveryMinutes": null,
     "opensAt": "07:00",
-    "closesAt": "15:00"
+    "closesAt": "15:00",
+    "imageUrl": "https://tse4.mm.bing.net/th/id/OIP.KFOYBEMMk3TMqoUxepehmQHaEW?r=0&pid=Api"
   },
   {
     "id": "falafel-hazkenim",
     "name": "Falafel HaZkenim",
     "emoji": "🧆",
     "description": "The Wadi Nisnas institution — worth the walk uphill.",
-    "categories": ["mediterranean", "sandwiches"],
+    "categories": [
+      "mediterranean",
+      "sandwiches"
+    ],
     "avgPrice": 7,
-    "dietary": ["vegetarian", "vegan"],
+    "dietary": [
+      "vegetarian",
+      "vegan"
+    ],
     "walkMinutes": 15,
     "supportsDelivery": false,
     "deliveryMinutes": null,
     "opensAt": "09:00",
-    "closesAt": "17:00"
+    "closesAt": "17:00",
+    "imageUrl": "https://tse4.mm.bing.net/th/id/OIP.oSP_e51eZUID-D_tZ-cs_QHaFN?r=0&pid=Api"
   },
   {
     "id": "breada",
     "name": "Breada",
     "emoji": "🥖",
     "description": "Bakery-café at HaNamal 6 — sandwiches, pastries, serious coffee.",
-    "categories": ["sandwiches"],
+    "categories": [
+      "sandwiches"
+    ],
     "avgPrice": 10,
-    "dietary": ["vegetarian"],
+    "dietary": [
+      "vegetarian"
+    ],
     "walkMinutes": 4,
     "supportsDelivery": true,
     "deliveryMinutes": 25,
     "opensAt": "08:00",
-    "closesAt": "17:00"
+    "closesAt": "17:00",
+    "imageUrl": "https://tse3.mm.bing.net/th/id/OIP.v6TIIUX5D3deB4MHDwul3gHaEK?r=0&pid=Api"
   },
   {
     "id": "fattoush-bar",
     "name": "Fattoush Bar",
     "emoji": "🥗",
     "description": "Mediterranean plates and bar food at HaNamal 6.",
-    "categories": ["mediterranean", "salad"],
+    "categories": [
+      "mediterranean",
+      "salad"
+    ],
     "avgPrice": 18,
-    "dietary": ["vegetarian", "vegan"],
+    "dietary": [
+      "vegetarian",
+      "vegan"
+    ],
     "walkMinutes": 4,
     "supportsDelivery": false,
     "deliveryMinutes": null,
     "opensAt": "12:00",
-    "closesAt": "23:00"
+    "closesAt": "23:00",
+    "imageUrl": "https://tse4.mm.bing.net/th/id/OIP.Iz9d-AQfWNq5eYUaziDBkgHaE0?r=0&pid=Api"
   },
   {
     "id": "kona-burger",
     "name": "Kona Burger",
     "emoji": "🍔",
     "description": "Burgers at HaNamal 10.",
-    "categories": ["burgers"],
+    "categories": [
+      "burgers"
+    ],
     "avgPrice": 15,
     "dietary": [],
     "walkMinutes": 4,
     "supportsDelivery": true,
     "deliveryMinutes": 30,
     "opensAt": "12:00",
-    "closesAt": "22:00"
+    "closesAt": "22:00",
+    "imageUrl": "https://tse3.mm.bing.net/th/id/OIP.EVgy0XRYHGq-KJi-bZzdcwHaNK?r=0&pid=Api"
   },
   {
     "id": "lux",
     "name": "Lux",
     "emoji": "🦞",
     "description": "Mediterranean seafood and grill at HaNamal 13.",
-    "categories": ["mediterranean"],
+    "categories": [
+      "mediterranean"
+    ],
     "avgPrice": 28,
     "dietary": [],
     "walkMinutes": 4,
     "supportsDelivery": false,
     "deliveryMinutes": null,
     "opensAt": "12:00",
-    "closesAt": "23:00"
+    "closesAt": "23:00",
+    "imageUrl": "https://tse2.mm.bing.net/th/id/OIP.rFDNSCm1UujMgfdhyk5DYwHaHa?r=0&pid=Api"
   },
   {
     "id": "crudo",
     "name": "Crudo",
     "emoji": "🍕",
     "description": "Italian kitchen and pizza at HaNamal 15.",
-    "categories": ["pizza"],
+    "categories": [
+      "pizza"
+    ],
     "avgPrice": 16,
-    "dietary": ["vegetarian"],
+    "dietary": [
+      "vegetarian"
+    ],
     "walkMinutes": 5,
     "supportsDelivery": true,
     "deliveryMinutes": 35,
     "opensAt": "12:00",
-    "closesAt": "23:00"
+    "closesAt": "23:00",
+    "imageUrl": "https://tse2.mm.bing.net/th/id/OIP.Ia2xV6WbENA0Hpg3YwnIpQHaGB?r=0&pid=Api"
   },
   {
     "id": "chang-ba",
     "name": "Chang Ba",
     "emoji": "🍜",
     "description": "Thai wok kitchen at HaNamal 23.",
-    "categories": ["asian"],
+    "categories": [
+      "asian"
+    ],
     "avgPrice": 15,
-    "dietary": ["vegetarian", "vegan"],
+    "dietary": [
+      "vegetarian",
+      "vegan"
+    ],
     "walkMinutes": 5,
     "supportsDelivery": true,
     "deliveryMinutes": 30,
     "opensAt": "12:00",
-    "closesAt": "22:00"
+    "closesAt": "22:00",
+    "imageUrl": "https://tse3.mm.bing.net/th/id/OIP.Hw3YDUORRlH91IIhkqYzCQHaJ3?r=0&pid=Api"
   },
   {
     "id": "libira",
     "name": "Libira",
     "emoji": "🍻",
     "description": "Downtown brewpub at HaNamal 26 — house sausages, burgers, craft beer.",
-    "categories": ["burgers", "bbq"],
+    "categories": [
+      "burgers",
+      "bbq"
+    ],
     "avgPrice": 18,
     "dietary": [],
     "walkMinutes": 6,
     "supportsDelivery": false,
     "deliveryMinutes": null,
     "opensAt": "12:00",
-    "closesAt": "23:00"
+    "closesAt": "23:00",
+    "imageUrl": "https://tse1.mm.bing.net/th/id/OIP.DFxSn9tVFEca878KBrC5bwHaEH?r=0&pid=Api"
   },
   {
     "id": "the-port-30",
     "name": "The Port 30",
     "emoji": "🍟",
     "description": "Fast food at HaNamal 30 — in, out, fed.",
-    "categories": ["burgers", "sandwiches"],
+    "categories": [
+      "burgers",
+      "sandwiches"
+    ],
     "avgPrice": 11,
     "dietary": [],
     "walkMinutes": 6,
     "supportsDelivery": true,
     "deliveryMinutes": 25,
     "opensAt": "11:00",
-    "closesAt": "22:00"
+    "closesAt": "22:00",
+    "imageUrl": "https://tse2.mm.bing.net/th/id/OIP.eWMFE8dhVMcxfkxn_lvApAHaEK?r=0&pid=Api"
   },
   {
     "id": "malabeer",
     "name": "Malabeer",
     "emoji": "🍺",
     "description": "Bar food at HaNamal 32.",
-    "categories": ["sandwiches", "bbq"],
+    "categories": [
+      "sandwiches",
+      "bbq"
+    ],
     "avgPrice": 16,
     "dietary": [],
     "walkMinutes": 6,
     "supportsDelivery": false,
     "deliveryMinutes": null,
     "opensAt": "12:00",
-    "closesAt": "23:00"
+    "closesAt": "23:00",
+    "imageUrl": "https://tse4.mm.bing.net/th/id/OIP.QhLyIv3KoR46pQHrNVRSxgHaHa?r=0&pid=Api"
   },
   {
     "id": "raseef-33",
     "name": "Raseef 33",
     "emoji": "🍲",
     "description": "Arabic-local melting-pot kitchen at HaNamal 33.",
-    "categories": ["mediterranean"],
+    "categories": [
+      "mediterranean"
+    ],
     "avgPrice": 20,
-    "dietary": ["vegetarian"],
+    "dietary": [
+      "vegetarian"
+    ],
     "walkMinutes": 6,
     "supportsDelivery": false,
     "deliveryMinutes": null,
     "opensAt": "12:00",
-    "closesAt": "23:00"
+    "closesAt": "23:00",
+    "imageUrl": "https://tse1.mm.bing.net/th/id/OIP.ZWMGy4h_uxHx7TDF-HlcrwHaHa?r=0&pid=Api"
   },
   {
     "id": "rola",
     "name": "ROLA",
     "emoji": "🫓",
     "description": "Levantine and Middle Eastern plates at HaNamal 33.",
-    "categories": ["mediterranean"],
+    "categories": [
+      "mediterranean"
+    ],
     "avgPrice": 19,
-    "dietary": ["vegetarian"],
+    "dietary": [
+      "vegetarian"
+    ],
     "walkMinutes": 6,
     "supportsDelivery": false,
     "deliveryMinutes": null,
     "opensAt": "12:00",
-    "closesAt": "23:00"
+    "closesAt": "23:00",
+    "imageUrl": "https://tse1.mm.bing.net/th/id/OIP.APauqMrteE_L_hmuYz6yhgHaHa?r=0&pid=Api"
   },
   {
     "id": "neapolitan-pizza",
     "name": "Neapolitan Pizza",
     "emoji": "🍕",
     "description": "Wood-fired Neapolitan pies at HaNamal 37.",
-    "categories": ["pizza"],
+    "categories": [
+      "pizza"
+    ],
     "avgPrice": 13,
-    "dietary": ["vegetarian"],
+    "dietary": [
+      "vegetarian"
+    ],
     "walkMinutes": 7,
     "supportsDelivery": true,
     "deliveryMinutes": 30,
     "opensAt": "12:00",
-    "closesAt": "22:00"
+    "closesAt": "22:00",
+    "imageUrl": "https://tse1.mm.bing.net/th/id/OIP.lyPZ_uBn18vZZs5kKSi7zwHaFu?r=0&pid=Api"
   },
   {
     "id": "kalmans",
     "name": "Kalman's",
     "emoji": "🍷",
     "description": "Gastropub at HaNamal 3.",
-    "categories": ["burgers", "bbq"],
+    "categories": [
+      "burgers",
+      "bbq"
+    ],
     "avgPrice": 20,
     "dietary": [],
     "walkMinutes": 3,
     "supportsDelivery": false,
     "deliveryMinutes": null,
     "opensAt": "12:00",
-    "closesAt": "23:00"
+    "closesAt": "23:00",
+    "imageUrl": "https://tse1.mm.bing.net/th/id/OIP.Z703MhXaEY4BmB9l_JW-4QHaHa?r=0&pid=Api"
   },
   {
     "id": "nahma-hummus",
     "name": "Nahma Hummus",
     "emoji": "🥣",
     "description": "Hummus at Derech Ha'atzmaut 3 — wiped clean by 15:00.",
-    "categories": ["mediterranean"],
+    "categories": [
+      "mediterranean"
+    ],
     "avgPrice": 8,
-    "dietary": ["vegetarian", "vegan"],
+    "dietary": [
+      "vegetarian",
+      "vegan"
+    ],
     "walkMinutes": 6,
     "supportsDelivery": false,
     "deliveryMinutes": null,
     "opensAt": "09:00",
-    "closesAt": "15:00"
+    "closesAt": "15:00",
+    "imageUrl": "https://tse1.mm.bing.net/th/id/OIP.S1kKXWfCV6dai65NB9ALWQHaFj?r=0&pid=Api"
   },
   {
     "id": "koreana",
     "name": "Koreana",
     "emoji": "🍚",
     "description": "Korean kitchen at Derech Ha'atzmaut 66.",
-    "categories": ["asian", "bowls"],
+    "categories": [
+      "asian",
+      "bowls"
+    ],
     "avgPrice": 16,
-    "dietary": ["vegetarian"],
+    "dietary": [
+      "vegetarian"
+    ],
     "walkMinutes": 3,
     "supportsDelivery": true,
     "deliveryMinutes": 30,
     "opensAt": "12:00",
-    "closesAt": "22:00"
+    "closesAt": "22:00",
+    "imageUrl": "https://tse3.mm.bing.net/th/id/OIP.A-AOeQbSHgRWeBoq9yoDjAHaNK?r=0&pid=Api"
   },
   {
     "id": "butcher-bar",
     "name": "Butcher Bar",
     "emoji": "🥩",
     "description": "Meat and grill at Derech Ha'atzmaut 70.",
-    "categories": ["bbq"],
+    "categories": [
+      "bbq"
+    ],
     "avgPrice": 26,
     "dietary": [],
     "walkMinutes": 3,
     "supportsDelivery": false,
     "deliveryMinutes": null,
     "opensAt": "12:00",
-    "closesAt": "23:00"
+    "closesAt": "23:00",
+    "imageUrl": "https://tse3.mm.bing.net/th/id/OIP.R5zdYy8CK_nM2FXGJ-JLwAHaFj?r=0&pid=Api"
   },
   {
     "id": "chokolata",
     "name": "Chokolata",
     "emoji": "🍲",
     "description": "Home-style plates at Derech Ha'atzmaut 80.",
-    "categories": ["mediterranean", "soup"],
+    "categories": [
+      "mediterranean",
+      "soup"
+    ],
     "avgPrice": 13,
-    "dietary": ["vegetarian"],
+    "dietary": [
+      "vegetarian"
+    ],
     "walkMinutes": 4,
     "supportsDelivery": true,
     "deliveryMinutes": 30,
     "opensAt": "11:00",
-    "closesAt": "18:00"
+    "closesAt": "18:00",
+    "imageUrl": "https://tse4.mm.bing.net/th/id/OIP.Kb7mroovclrOr3ktf8sumQHaJQ?r=0&pid=Api"
   },
   {
     "id": "little-italy",
     "name": "Little Italy",
     "emoji": "🍝",
     "description": "Pizza and pasta at Derech Ha'atzmaut 80.",
-    "categories": ["pizza"],
+    "categories": [
+      "pizza"
+    ],
     "avgPrice": 15,
-    "dietary": ["vegetarian"],
+    "dietary": [
+      "vegetarian"
+    ],
     "walkMinutes": 4,
     "supportsDelivery": true,
     "deliveryMinutes": 35,
     "opensAt": "12:00",
-    "closesAt": "22:00"
+    "closesAt": "22:00",
+    "imageUrl": "https://tse1.mm.bing.net/th/id/OIP.Q6CZ_Fro_KGi0WNT05UjNwHaFm?r=0&pid=Api"
   },
   {
     "id": "mint-lounge",
     "name": "Mint Lounge Bar",
     "emoji": "🍸",
     "description": "Restaurant-bar at Derech Ha'atzmaut 84.",
-    "categories": ["mediterranean", "sandwiches"],
+    "categories": [
+      "mediterranean",
+      "sandwiches"
+    ],
     "avgPrice": 19,
     "dietary": [],
     "walkMinutes": 4,
     "supportsDelivery": false,
     "deliveryMinutes": null,
     "opensAt": "12:00",
-    "closesAt": "23:00"
+    "closesAt": "23:00",
+    "imageUrl": "https://tse2.mm.bing.net/th/id/OIP.dYPjR0i6_JF_mAR0DGzvWwHaE8?r=0&pid=Api"
   },
   {
     "id": "onyx",
     "name": "Onyx",
     "emoji": "🍢",
     "description": "Tapas and small plates at Derech Ha'atzmaut 104.",
-    "categories": ["mediterranean"],
+    "categories": [
+      "mediterranean"
+    ],
     "avgPrice": 22,
     "dietary": [],
     "walkMinutes": 6,
     "supportsDelivery": false,
     "deliveryMinutes": null,
     "opensAt": "12:00",
-    "closesAt": "23:00"
+    "closesAt": "23:00",
+    "imageUrl": "https://tse1.mm.bing.net/th/id/OIP.QtzUCmuBTEEL1KVueiCCfwHaGE?r=0&pid=Api"
   },
   {
     "id": "venya-bistro",
     "name": "Venya Bistro",
     "emoji": "🐟",
     "description": "Waterfront bistro at Sha'ar Palmer 1 — fish, seafood, sea view.",
-    "categories": ["mediterranean"],
+    "categories": [
+      "mediterranean"
+    ],
     "avgPrice": 27,
     "dietary": [],
     "walkMinutes": 5,
     "supportsDelivery": false,
     "deliveryMinutes": null,
     "opensAt": "12:00",
-    "closesAt": "23:00"
+    "closesAt": "23:00",
+    "imageUrl": "https://tse3.mm.bing.net/th/id/OIP.fNCVrIt_Q9Bw7y4dWDCHzQHaFj?r=0&pid=Api"
   },
   {
     "id": "sugar-spice",
     "name": "Sugar Spice",
     "emoji": "☕",
     "description": "Café at Natanzon 14 — salads, toasts, cakes.",
-    "categories": ["sandwiches", "salad"],
+    "categories": [
+      "sandwiches",
+      "salad"
+    ],
     "avgPrice": 11,
-    "dietary": ["vegetarian"],
+    "dietary": [
+      "vegetarian"
+    ],
     "walkMinutes": 4,
     "supportsDelivery": true,
     "deliveryMinutes": 25,
     "opensAt": "08:00",
-    "closesAt": "18:00"
+    "closesAt": "18:00",
+    "imageUrl": "https://tse2.mm.bing.net/th/id/OIP.ykiRR5AD9GNn-1ZwcOrSzAHaE7?r=0&pid=Api"
   },
   {
     "id": "falafel-kikar-paris",
     "name": "Falafel Kikar Paris",
     "emoji": "🧆",
     "description": "Falafel by Paris Square, Natanzon 18.",
-    "categories": ["mediterranean", "sandwiches"],
+    "categories": [
+      "mediterranean",
+      "sandwiches"
+    ],
     "avgPrice": 7,
-    "dietary": ["vegetarian", "vegan"],
+    "dietary": [
+      "vegetarian",
+      "vegan"
+    ],
     "walkMinutes": 5,
     "supportsDelivery": false,
     "deliveryMinutes": null,
     "opensAt": "09:00",
-    "closesAt": "17:00"
+    "closesAt": "17:00",
+    "imageUrl": "https://tse3.mm.bing.net/th/id/OIP.-ifWysKr7GnJaBm8v9B2PQHaHa?r=0&pid=Api"
   },
   {
     "id": "hummus-bar",
     "name": "Hummus BAR",
     "emoji": "🥣",
     "description": "Hummus with a vegan streak at Natanzon 27.",
-    "categories": ["mediterranean"],
+    "categories": [
+      "mediterranean"
+    ],
     "avgPrice": 9,
-    "dietary": ["vegetarian", "vegan"],
+    "dietary": [
+      "vegetarian",
+      "vegan"
+    ],
     "walkMinutes": 5,
     "supportsDelivery": true,
     "deliveryMinutes": 25,
     "opensAt": "10:00",
-    "closesAt": "17:00"
+    "closesAt": "17:00",
+    "imageUrl": "https://tse3.mm.bing.net/th/id/OIP.kzfv_L41BqSmDULTWOsJswHaJ3?r=0&pid=Api"
   },
   {
     "id": "iza-bar",
     "name": "Iza Bar",
     "emoji": "🍔",
     "description": "Gastropub at Moshe Aharon 1.",
-    "categories": ["burgers", "bbq"],
+    "categories": [
+      "burgers",
+      "bbq"
+    ],
     "avgPrice": 18,
     "dietary": [],
     "walkMinutes": 5,
     "supportsDelivery": false,
     "deliveryMinutes": null,
     "opensAt": "12:00",
-    "closesAt": "23:00"
+    "closesAt": "23:00",
+    "imageUrl": "https://tse4.mm.bing.net/th/id/OIP.VrI5ONDs8rM7Kzat9-GRxgHaEi?r=0&pid=Api"
   },
   {
     "id": "yakov-kebab",
     "name": "Yakov Kebab",
     "emoji": "🍢",
     "description": "Kebab and grill at Moshe Aharon 10.",
-    "categories": ["bbq", "mediterranean"],
+    "categories": [
+      "bbq",
+      "mediterranean"
+    ],
     "avgPrice": 14,
     "dietary": [],
     "walkMinutes": 5,
     "supportsDelivery": true,
     "deliveryMinutes": 30,
     "opensAt": "11:00",
-    "closesAt": "20:00"
+    "closesAt": "20:00",
+    "imageUrl": "https://tse4.mm.bing.net/th/id/OIP.d-lBu9IJVwcVZmS8WU8j7AHaEK?r=0&pid=Api"
   },
   {
     "id": "mosab-habesha",
     "name": "MOSAB HABESHA",
     "emoji": "🫘",
     "description": "Ethiopian platters at HaSaraya 1 — injera built for sharing.",
-    "categories": ["bowls"],
+    "categories": [
+      "bowls"
+    ],
     "avgPrice": 13,
-    "dietary": ["vegetarian", "vegan"],
+    "dietary": [
+      "vegetarian",
+      "vegan"
+    ],
     "walkMinutes": 6,
     "supportsDelivery": false,
     "deliveryMinutes": null,
     "opensAt": "11:00",
-    "closesAt": "21:00"
+    "closesAt": "21:00",
+    "imageUrl": "https://tse3.mm.bing.net/th/id/OIP.jbjxfHcneThJxe09I3GKugHaHS?r=0&pid=Api"
   },
   {
     "id": "abu-yussef",
     "name": "Abu Yussef",
     "emoji": "🥣",
     "description": "Old-school local restaurant at Hativ 3 — hummus since forever.",
-    "categories": ["mediterranean"],
+    "categories": [
+      "mediterranean"
+    ],
     "avgPrice": 9,
-    "dietary": ["vegetarian"],
+    "dietary": [
+      "vegetarian"
+    ],
     "walkMinutes": 6,
     "supportsDelivery": false,
     "deliveryMinutes": null,
     "opensAt": "08:00",
-    "closesAt": "16:00"
+    "closesAt": "16:00",
+    "imageUrl": "https://tse1.mm.bing.net/th/id/OIP.Imk3SowKwTI_XNAPG-LyiwHaFj?r=0&pid=Api"
   },
   {
     "id": "kimiko",
     "name": "Kimiko",
     "emoji": "🍣",
     "description": "Japanese and sushi at Hativ 4.",
-    "categories": ["sushi", "asian"],
+    "categories": [
+      "sushi",
+      "asian"
+    ],
     "avgPrice": 21,
-    "dietary": ["gluten_free"],
+    "dietary": [
+      "gluten_free"
+    ],
     "walkMinutes": 6,
     "supportsDelivery": true,
     "deliveryMinutes": 35,
     "opensAt": "12:00",
-    "closesAt": "22:00"
+    "closesAt": "22:00",
+    "imageUrl": "https://tse2.mm.bing.net/th/id/OIP.47J_nfXmYL9ED81JVHd8WQHaJQ?r=0&pid=Api"
   },
   {
     "id": "pita-baer",
     "name": "Pita Baer",
     "emoji": "🫓",
     "description": "Bakery pitas stuffed to order at Hativ 4.",
-    "categories": ["sandwiches"],
+    "categories": [
+      "sandwiches"
+    ],
     "avgPrice": 9,
-    "dietary": ["vegetarian"],
+    "dietary": [
+      "vegetarian"
+    ],
     "walkMinutes": 6,
     "supportsDelivery": false,
     "deliveryMinutes": null,
     "opensAt": "08:00",
-    "closesAt": "16:00"
+    "closesAt": "16:00",
+    "imageUrl": "https://tse3.mm.bing.net/th/id/OIP.SLbINOT520puSV5JaDSYxgHaFj?r=0&pid=Api"
   },
   {
     "id": "star-restaurant",
     "name": "Star Restaurant",
     "emoji": "⭐",
     "description": "Mixed local plates at Sderot HaMeginim 19.",
-    "categories": ["mediterranean"],
+    "categories": [
+      "mediterranean"
+    ],
     "avgPrice": 12,
     "dietary": [],
     "walkMinutes": 7,
     "supportsDelivery": false,
     "deliveryMinutes": null,
     "opensAt": "10:00",
-    "closesAt": "18:00"
+    "closesAt": "18:00",
+    "imageUrl": "https://tse1.mm.bing.net/th/id/OIP.bQS3zHKSBHzv3ybWTan1mAHaFi?r=0&pid=Api"
   },
   {
     "id": "abu-shakker",
     "name": "Abu Shakker",
     "emoji": "🥣",
     "description": "Famous hummus at Sderot HaMeginim 29.",
-    "categories": ["mediterranean"],
+    "categories": [
+      "mediterranean"
+    ],
     "avgPrice": 8,
-    "dietary": ["vegetarian", "vegan"],
+    "dietary": [
+      "vegetarian",
+      "vegan"
+    ],
     "walkMinutes": 8,
     "supportsDelivery": false,
     "deliveryMinutes": null,
     "opensAt": "08:00",
-    "closesAt": "15:00"
+    "closesAt": "15:00",
+    "imageUrl": "https://tse4.mm.bing.net/th/id/OIP.OBY3ze9NFRpEEaroJIrJOQHaEK?r=0&pid=Api"
   },
   {
     "id": "yordi-cafe",
     "name": "Yordi Café",
     "emoji": "☕",
     "description": "Neighborhood café at Kehilat Saloniki 1.",
-    "categories": ["sandwiches", "salad"],
+    "categories": [
+      "sandwiches",
+      "salad"
+    ],
     "avgPrice": 10,
-    "dietary": ["vegetarian"],
+    "dietary": [
+      "vegetarian"
+    ],
     "walkMinutes": 4,
     "supportsDelivery": false,
     "deliveryMinutes": null,
     "opensAt": "08:00",
-    "closesAt": "17:00"
+    "closesAt": "17:00",
+    "imageUrl": "https://tse4.mm.bing.net/th/id/OIP.3sJRIgx_bTigRqPnRk06IAHaHa?r=0&pid=Api"
   },
   {
     "id": "catom",
     "name": "Catom",
     "emoji": "🥪",
     "description": "Quick mixed meals — grab it and get back to standup.",
-    "categories": ["sandwiches"],
+    "categories": [
+      "sandwiches"
+    ],
     "avgPrice": 10,
     "dietary": [],
     "walkMinutes": 5,
     "supportsDelivery": true,
     "deliveryMinutes": 25,
     "opensAt": "10:00",
-    "closesAt": "18:00"
+    "closesAt": "18:00",
+    "imageUrl": "https://tse2.mm.bing.net/th/id/OIP.GAOlcZJAAoCtzu7FCHtYTAHaJy?r=0&pid=Api"
   }
 ]
